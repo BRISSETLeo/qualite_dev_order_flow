@@ -105,7 +105,7 @@ public class ProductRegistryService {
     return Uni.createFrom().item(evt);
   }
 
-  /**
+/**
    * Handle the update command, save and return an event.
    * 
    * @param updateProduct - The update product command.

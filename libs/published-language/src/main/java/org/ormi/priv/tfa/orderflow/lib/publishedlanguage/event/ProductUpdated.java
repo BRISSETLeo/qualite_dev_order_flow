@@ -35,12 +35,20 @@ public final class ProductUpdated extends Event implements ProductRegistryEvent 
       this.productDescription = productDescription;
     }
   }
-
+  
   /**
    * The payload for the event.
    */
-  public Payload payload;
+  private Payload payload;
 
+  /**
+  * Get the payload for the event.
+  * @return the payload.
+  */
+  public Payload getPayload() {
+    return payload;
+  }
+  
   /**
    * Constructor.
    * 

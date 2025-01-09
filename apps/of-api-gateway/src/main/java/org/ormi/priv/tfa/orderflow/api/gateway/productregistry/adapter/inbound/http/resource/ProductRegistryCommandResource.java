@@ -326,10 +326,8 @@ public class ProductRegistryCommandResource {
    */
   private Consumer<ProductRegistryEvent> getEventsConsumerByCorrelationId(String correlationId) {
     try {
-      // Define the channel name, topic and schema for the consumer
       final String channelName = ProductRegistryEventChannelName.PRODUCT_REGISTRY_EVENT.toString();
       final String topic = channelName + "-" + correlationId;
-      // Create and return the subscription (consumer)
       return pulsarClients.getClient(channelName)
           .newConsumer(Schema.JSON(ProductRegistryEvent.class))
           .subscriptionName(topic)
@@ -340,3 +338,4 @@ public class ProductRegistryCommandResource {
     }
   }
 }
+

@@ -90,20 +90,20 @@ public class ProductRegistry {
   public void apply(ProductRegistryEvent event) {
     Log.debug("Applying event: " + event.getClass().getName());
     if (event instanceof ProductRegistered registered) {
-      final ProductId productId = registered.payload.productId;
+      final ProductId productId = registered.getPayload().productId;
       products.put(productId, new Product(
           productId,
-          registered.payload.name,
-          registered.payload.productDescription));
+          registered.getPayload().name,
+          registered.getPayload().productDescription));
     } else if (event instanceof ProductRemoved removed) {
-      products.remove(removed.payload.productId);
+      products.remove(removed.getPayload().productId);
     } else if (event instanceof ProductUpdated updated) {
-      final ProductId productId = updated.payload.productId;
+      final ProductId productId = updated.getPayload().productId;
       products.compute(productId, (k, v) -> {
         return new Product(
             productId,
-            updated.payload.name,
-            updated.payload.productDescription);
+            updated.getPayload().name,
+            updated.getPayload().productDescription);
       });
     } else {
       Log.warn("Unhandled event type: " + event.getClass().getName());

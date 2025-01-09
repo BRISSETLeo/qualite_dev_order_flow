@@ -33,10 +33,10 @@ public class ProductRegistryProjector {
   private ProductService productService;
 
   /**
-   * Handle the event.
-   * 
-   * @param event - the event to handle
-   */
+  * Handle the event.
+  * 
+  * @param event - the event to handle
+  */
   public void handleEvent(ProductRegistryEvent event) {
     if (event instanceof ProductRegistered registered) {
       projectRegisteredProduct(registered);
@@ -55,9 +55,9 @@ public class ProductRegistryProjector {
   public void projectRegisteredProduct(ProductRegistered registered) {
     // Create a new product entity
     final ProductEntity product = new ProductEntity();
-    product.productId = registered.payload.productId.getId();
-    product.name = registered.payload.name;
-    product.description = registered.payload.productDescription;
+    product.productId = registered.getPayload().productId.getId();
+    product.name = registered.getPayload().name;
+    product.description = registered.getPayload().productDescription;
     
     // Persist the product
     productService.createProduct(product);
@@ -70,17 +70,17 @@ public class ProductRegistryProjector {
    */
   public void projectUpdatedProduct(ProductUpdated updated) {
     // Get the product entity
-    final Optional<ProductEntity> result = productService.getProductById(updated.payload.productId);
+    final Optional<ProductEntity> result = productService.getProductById(updated.getPayload().productId);
     if (result.isEmpty()) {
       // The product does not exist
       // Log an error
-      Log.error("Product not found: " + updated.payload.productId);
+      Log.error("Product not found: " + updated.getPayload().productId);
       return;
     }
     // Update the product
     final ProductEntity product = result.get();
-    product.name = updated.payload.name;
-    product.description = updated.payload.productDescription;
+    product.name = updated.getPayload().name;
+    product.description = updated.getPayload().productDescription;
     // Persist the product
     productService.updateProduct(product);
   }
@@ -92,6 +92,6 @@ public class ProductRegistryProjector {
    */
   public void projectRemovedProduct(ProductRemoved removed) {
     // Remove the product
-    productService.removeProductById(removed.payload.productId);
+    productService.removeProductById(removed.getPayload().productId);
   }
 }

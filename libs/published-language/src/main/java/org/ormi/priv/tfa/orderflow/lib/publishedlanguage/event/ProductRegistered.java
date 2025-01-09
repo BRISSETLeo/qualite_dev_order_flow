@@ -37,10 +37,17 @@ public final class ProductRegistered extends Event implements ProductRegistryEve
   }
 
   /**
-   * The payload for the event.
-   */
-  public Payload payload;
-
+  * The payload for the event.
+  */
+  private Payload payload;
+  
+  /**
+  * Get the payload for the event.
+  * @return the payload.
+  */
+  public Payload getPayload() {
+      return payload;
+   }
   /**
    * Constructor.
    * 
