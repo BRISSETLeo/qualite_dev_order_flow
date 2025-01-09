@@ -84,6 +84,9 @@ TODO
 ## Installation
 
 TODO
+
+## Contribuer au projet
+Nous accueillons les contributions de tous les membres ! Avant de commencer, veuillez lire notre [guide de contribution](CONTRIBUTING.md).
     
 ## Authors
 
