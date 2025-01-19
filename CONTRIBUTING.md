@@ -1,67 +1,83 @@
 # Guide de contribution
 
-Ce document décrit les règles et bonnes pratiques pour collaborer efficacement.
+Merci de vouloir contribuer à ce projet ! Votre aide est grandement appréciée. Pour garantir une collaboration efficace et harmonieuse, veuillez suivre les directives suivantes.
 
-## Table des matières
-1. [Comment contribuer](#comment-contribuer)
-2. [Branches et workflow Git](#branches-et-workflow-git)
-3. [Style de code](#style-de-code)
-4. [Rapport de bugs](#rapport-de-bugs)
-5. [Proposition de fonctionnalités](#proposition-de-fonctionnalités)
-6. [Processus de revue de code](#processus-de-revue-de-code)
-7. [Communication](#communication)
 
----
+## **Comment contribuer**
 
-### 1. Comment contribuer
-- Forkez ce dépôt et clonez votre fork en local.
-- Créez une branche pour votre contribution (`git checkout -b nom-de-branche`).
-- Apportez vos modifications et testez-les.
-- Faites un commit clair et concis (`git commit -m "Description de la modification"`).
-- Poussez votre branche sur votre fork (`git push origin nom-de-branche`).
-- Ouvrez une Pull Request (PR) via l'interface GitHub.
+### 1. **Signaler un bug**
+- Vérifiez d'abord que le bug n'a pas déjà été signalé dans les [Issues](#).
 
----
+- Si ce n'est pas le cas, créez un nouveau rapport de bug :
+  - Décrivez le problème de manière claire.
 
-### 2. Branches et workflow Git
-- **main** : Contient la dernière version stable du projet.
-- **develop** : Contient les développements en cours.
-- Les branches spécifiques aux fonctionnalités doivent suivre le format `feature/nom-fonctionnalite`.
-- Les branches pour corriger les bugs doivent suivre le format `fix/description-bug`.
+  - Ajoutez des étapes pour reproduire le bug.
+  - Mentionnez l'environnement (OS, navigateur, version du projet, etc.).
 
----
+### 2. **Proposer une amélioration ou une nouvelle fonctionnalité**
+- Consultez la section des [Issues](#) pour voir si une proposition similaire existe.
 
-### 3. Style de code
-- Respectez les normes de développement Java
-- Utilisez des commentaires clairs et utiles.
-- Exécutez les outils de formatage et de linting avant de soumettre une PR.
+- Si non, ouvrez une **issue** :
+  - Expliquez en détail votre idée.
 
----
+  - Ajoutez des exemples ou des cas d'utilisation pertinents.
 
-### 4. Rapport de bugs
-Pour signaler un bug :
-1. Vérifiez d'abord que le bug n'a pas déjà été signalé.
-2. Ouvrez un "Issue" avec les informations suivantes :
-   - Description du bug
-   - Étapes pour reproduire le problème
-   - Comportement attendu
-   - Captures d'écran ou logs (si applicable)
+### 3. **Soumettre des modifications**
+- Forkez le dépôt et clonez votre fork localement.
 
----
+- Créez une branche pour vos modifications :
+  ```bash
+  git checkout -b feature/ma-nouvelle-fonctionnalite
+  ```
+- Ajoutez vos commits :
+  - Écrivez des messages de commit clairs et explicites.
 
-### 5. Proposition de fonctionnalités
-Pour proposer une nouvelle fonctionnalité :
-1. Vérifiez qu'une discussion n'est pas déjà en cours dans les Issues ou les Discussions.
-2. Créez un nouveau "Issue" avec une description claire de la fonctionnalité proposée.
+  - Suivez la convention suivante pour les messages de commit :
+    ```
+    <type>(<scope>): <description>
+    ```
+    Exemples : 
+    - `feat(panier): ajouter une option de suppression de produit`
+
+    - `fix(stock): corriger un bug de mise à jour des niveaux`
+- Poussez vos modifications :
+  ```bash
+  git push origin feature/ma-nouvelle-fonctionnalite
+  ```
+
+- Créez une **pull request (PR)** vers la branche principale du dépôt :
+  - Fournissez une description détaillée de vos changements.
+  - Liez la PR aux issues concernées (le cas échéant).
 
 ---
 
-### 6. Processus de revue de code
-- Chaque PR sera examinée par au moins un autre membre de l'équipe.
-- Les commentaires doivent être constructifs et respectueux.
-- Les PR doivent être approuvées avant leur fusion dans la branche principale.
+## **Règles de communication**
+- Restez respectueux et constructif dans vos échanges.
+
+- Privilégiez des discussions ouvertes et des solutions collaboratives.
+- Si vous avez des doutes, posez vos questions dans les [discussions](#) ou ajoutez un commentaire dans votre PR.
 
 ---
 
-### 7. Communication
-- Utilisez les Issues pour les bugs et suggestions.
+## **Normes de codage**
+- Respectez le style de code utilisé dans le projet. Consultez le fichier `.editorconfig` ou les guides spécifiques.
+
+- Utilisez des outils de linting et de formatage pour garantir un code propre et uniforme :
+  - Exemple : **ESLint**, **Prettier**, **Black** ou **flake8**.
+- Documentez les fonctions et classes importantes.
+
+---
+
+## **Tests**
+- Écrivez des tests pour toute nouvelle fonctionnalité ou correction.
+- Assurez-vous que tous les tests passent avant de soumettre une PR 
+- Ajoutez des tests unitaires et fonctionnels lorsque cela est pertinent.
+
+---
+
+## **Processus de validation**
+1. Une PR est examinée par les mainteneurs ou d'autres contributeurs.
+2. Les feedbacks sont partagés dans les commentaires de la PR.
+3. Une fois approuvée, la PR est fusionnée par un mainteneur.
+
+Merci encore pour votre contribution et votre engagement !

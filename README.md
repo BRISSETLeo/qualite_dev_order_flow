@@ -1,4 +1,3 @@
-
 # Development Quality - Order Flow
 
 A comprehensive DDD, CQRS, event-driven application for customer's order and stock management.
@@ -77,20 +76,15 @@ The stock is a list of products that are available for ordering. Each entry incl
 
 ## Documentation
 
-[Go to index](./doc/index.md)
-
-TODO
+- [Go to index](./doc/index.md)
+- [Contribution Guidelines](./CONTRIBUTING.md)
 
 ## Installation
 
 TODO
-
-## Contribuer au projet
-Nous accueillons les contributions de tous les membres ! Avant de commencer, veuillez lire notre [guide de contribution](CONTRIBUTING.md).
     
 ## Authors
 
 - Thibaud FAURIE :
   - [@thibaud.faurie (Private GitLab)](https://gitlab.cloud0.openrichmedia.org/thibaud.faurie)
   - [@thibaud-faurie (LinkedIn)](https://www.linkedin.com/in/thibaud-faurie/)
-
